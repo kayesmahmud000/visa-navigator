@@ -3,7 +3,8 @@ import React from 'react';
 const AddVisa = () => {
     return (
         <div>
-            <h2>This is add visa page</h2>
+            <h2>Add a New Visa</h2>
+            <p>Complete the Form to Add Visa Details</p>
         </div>
     );
 };
