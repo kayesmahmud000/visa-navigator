@@ -19,7 +19,7 @@ console.log(latestVisa)
             <section className="my-10">
                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-5"  >
                {
-                    latestVisa.map(visa=><VisaCard visa={visa}></VisaCard>)
+                    latestVisa.map(visa=><VisaCard key={visa._id} visa={visa}></VisaCard>)
                 }
                </div>
             </section>

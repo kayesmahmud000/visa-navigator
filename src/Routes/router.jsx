@@ -36,7 +36,8 @@ const router = createBrowserRouter([
         },
         {
           path:"/visaApplication",
-          element:<PrivateRoute><VisaApplications></VisaApplications></PrivateRoute>
+          element:<PrivateRoute><VisaApplications></VisaApplications></PrivateRoute>,
+          loader:()=>fetch("http://localhost:5000/application")
         },
       ]
     },
