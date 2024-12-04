@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { authContext } from '../Provider/AuthProvider';
 
 const LoginPage = () => {
     const {handleLogin, handleGoogle, setUsers}= useContext(authContext)
+    const [errorMessages , setErrorMessage]=useState("")
     const navigate= useNavigate()
   const  location= useLocation()
     const handleLoginForm=(e)=>{
@@ -28,6 +29,7 @@ const LoginPage = () => {
             const errorMessage = error.message;
             // ..
             console.log( errorCode ,errorMessage)
+            setErrorMessage(errorMessage)
           });
     }
 
@@ -64,6 +66,11 @@ const LoginPage = () => {
                         <label className="label">
                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                         </label>
+                        {
+                            errorMessages &&  <label className="label">
+                            <span className="label-text text-sm text-red-500">{errorMessages}</span>
+                        </label>
+                        }
                     </div>
                     <div className="form-control mt-6">
                         <button className="btn bg-[#5c7cfa] text-lg text-white">Login</button>

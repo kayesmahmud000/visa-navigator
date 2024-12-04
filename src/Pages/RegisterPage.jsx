@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { authContext } from '../Provider/AuthProvider';
@@ -7,6 +7,7 @@ const RegisterPage = () => {
     const {handleGoogle, handleUpdateUser, setUsers, handleCreateUser}= useContext(authContext)
     const navigate= useNavigate()
     const location =useLocation()
+    const [errorMessage , setErrorMessage]=useState("")
     const handleRegister =(e)=>{
         e.preventDefault()
         const form = e.target
@@ -14,7 +15,19 @@ const RegisterPage = () => {
         const email = form.email.value
         const photo = form.photo.value
         const password = form.password.value
+        if(password.length< 6){
+            setErrorMessage("Password must be at least 6 character")
+            return
+        }
+
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{1,}$/;
+
+        if(!passwordRegex.test(password)){
+            setErrorMessage("Must have an Uppercase letter and Must have an Lowercase letter")
+            return
+        }
         handleCreateUser(email, password)
+        
        
         .then(result=>{
             const user= result.user
@@ -84,7 +97,11 @@ const RegisterPage = () => {
                             <span className="label-text">Password</span>
                         </label>
                         <input type="password" name='password' placeholder="password" className="input input-bordered" required />
-                       
+                       {
+                        errorMessage &&  <label className="label">
+                        <span className="label-text text-sm text-red-500">{errorMessage}</span>
+                    </label>
+                       }
                     </div>
                     <div className="form-control mt-6">
                         <button className="btn bg-[#be4bdb] text-lg text-white">Register</button>
