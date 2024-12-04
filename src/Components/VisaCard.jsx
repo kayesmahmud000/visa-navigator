@@ -22,7 +22,9 @@ const VisaCard = ({ visa }) => {
     }
     return (
         <div>
-            <div className="card rounded-md h-[550px] bg-white hover:bg-[#e1c6b7] border border-gray-400  ">
+            <div className="card rounded-md h-[550px] bg-white hover:bg-[#e1c6b7] border border-gray-400  " data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
                 <figure className='p-3'>
                     <img
                         src={photo}
@@ -37,7 +39,7 @@ const VisaCard = ({ visa }) => {
                     <div className='font-semibold mr-2' >Visa Type: <span className="badge  font-normal  badge-outline">{visType}</span></div>
                    
                     <div className=' divider '></div>
-                    <div className="card-actions ">
+                    <div className="card-actions flex flex-col ">
                         
                         <div className='font-semibold' >Validity: <span className=" font-normal  ">{validity}</span></div>
                         <div className='font-semibold' >Processing Time: <span className="  font-normal ">{processing}</span></div>

@@ -1,11 +1,17 @@
 import React from 'react';
 import Banner from '../Components/Banner';
+import LeatestVisa from '../Components/LeatestVisa';
 
 
 const Home = () => {
     return (
-        <div className="max-w-7xl px-4 mx-auto">
-            <Banner></Banner>
+        <div className="container px-4 mx-auto">
+            <section>
+                <Banner></Banner>
+            </section>
+            <section className='mt-16'>
+                <LeatestVisa></LeatestVisa>
+            </section>
         </div>
     );
 };
