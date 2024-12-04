@@ -9,6 +9,7 @@ import VisaApplications from '../Pages/VisaApplications';
 import ErrorPage from '../Pages/ErrorPage';
 import LoginPage from '../Pages/LoginPage';
 import RegisterPage from '../Pages/RegisterPage';
+import VisaDetailsPage from '../Pages/VisaDetailsPage';
 
 const router = createBrowserRouter([
     {
@@ -21,7 +22,8 @@ const router = createBrowserRouter([
         },
         {
           path:"/allVisas",
-          element:<AllVisas></AllVisas>
+          element:<AllVisas></AllVisas>,
+          loader:()=>fetch("http://localhost:5000/addVisas")
         },
         {
           path:"/AddVisa",
@@ -36,6 +38,10 @@ const router = createBrowserRouter([
           element:<VisaApplications></VisaApplications>
         },
       ]
+    },
+    {
+      path:"/detailsPage",
+      element:<VisaDetailsPage></VisaDetailsPage>
     },
     {
       path:"/login",

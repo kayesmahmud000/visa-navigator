@@ -4,7 +4,7 @@ import Banner from '../Components/Banner';
 
 const Home = () => {
     return (
-        <div>
+        <div className="max-w-7xl px-4 mx-auto">
             <Banner></Banner>
         </div>
     );

@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import Swal from 'sweetalert2'
+import PageHeading from '../Components/PageHeading';
 
 const AddVisa = () => {
     const [validPassport, setValidPassport] = useState(false);
@@ -59,9 +60,9 @@ const AddVisa = () => {
 
     return (
         <div>
-            <div className="card bg-[#f2faef] w-full  shrink-0 ">
-                <h2 className='text-4xl font-bold text-center my-6'> Add a New Visa</h2>
-                <p className='text-center font-semibold'>Complete the Form to Add Visa Details</p>
+            <div className="card rounded-none bg-[#f2faef] w-full max-w-7xl px-4 mx-auto ">
+                <PageHeading title={"Add a New Visa"} subtitle={"Complete the Form to Add Visa Details"}></PageHeading>
+               
                 <form onSubmit={handleAddVisa} className="card-body">
                     <div className="md:flex mb-4">
                         <div className="form-control md:w-1/2 mr-5">
