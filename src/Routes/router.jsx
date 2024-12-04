@@ -10,6 +10,7 @@ import ErrorPage from '../Pages/ErrorPage';
 import LoginPage from '../Pages/LoginPage';
 import RegisterPage from '../Pages/RegisterPage';
 import VisaDetailsPage from '../Pages/VisaDetailsPage';
+import PrivateRoute from './PrivateRoute';
 
 const router = createBrowserRouter([
     {
@@ -27,21 +28,21 @@ const router = createBrowserRouter([
         },
         {
           path:"/AddVisa",
-          element:<AddVisa></AddVisa>
+          element:<PrivateRoute><AddVisa></AddVisa></PrivateRoute>
         },
         {
           path:"/myVisa",
-          element:<Myaddedvisas></Myaddedvisas>
+          element:<PrivateRoute><Myaddedvisas></Myaddedvisas></PrivateRoute>
         },
         {
           path:"/visaApplication",
-          element:<VisaApplications></VisaApplications>
+          element:<PrivateRoute><VisaApplications></VisaApplications></PrivateRoute>
         },
       ]
     },
     {
       path:"/detailsPage/:id",
-      element:<VisaDetailsPage></VisaDetailsPage>,
+      element:<PrivateRoute><VisaDetailsPage></VisaDetailsPage></PrivateRoute>,
       loader:({params})=>fetch(`http://localhost:5000/visa/${params.id}`)
     },
     {
