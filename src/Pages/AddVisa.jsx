@@ -153,7 +153,7 @@ const AddVisa = () => {
                         </div>
                     </div>
                     <div className="form-control mt-6">
-                        <button className="btn bg-[#5c7cfa] text-lg text-white">Add New Visa</button>
+                        <button className="btn bg-[#e63746] hover:border-[#e63746] text-white hover:bg-white hover:text-black">Add New Visa</button>
                     </div>
                 </form>
             </div>

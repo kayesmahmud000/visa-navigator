@@ -1,11 +1,46 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import PageHeading from '../Components/PageHeading';
+import Swal from 'sweetalert2';
 
 const VisaApplications = () => {
     const loadedApplication= useLoaderData()
     const [applications, setApplication]=useState(loadedApplication)
-    // const {email,firstName, lastName , cost , applied_date, validity, processing,visType ,name,photo}=applications
+    
+
+    const handleCancel=id=>{
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/application/${id}`,{
+                    method:"DELETE"
+                })
+                .then(res=>res.json())
+                .then(data=>{
+                    console.log(data)
+                    if(data.deletedCount>0){
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Your Application has been deleted.",
+                            icon: "success"
+                          });
+                         const remainApplication= applications.filter(application=>application._id !==id)
+                         setApplication(remainApplication)
+                    }
+                })
+             
+            }
+          });
+        
+       
+    }
     console.log(loadedApplication)
     return (
         <div>
@@ -14,7 +49,7 @@ const VisaApplications = () => {
             </section>
             <section className='container mx-auto my-10 grid lg:grid-cols-2'>
            {
-            applications.map(application=> <div className="hero  my-5 px-3 ">
+            applications.map(application=> <div key={application._id} className="hero  my-5 px-3 ">
                 <div className="hero-content flex-col bg-[#d0bfff]  rounded-lg justify-between text-black lg:flex-row  ">
                     <img
                         src={application.photo}
@@ -39,7 +74,7 @@ const VisaApplications = () => {
                                 
                             </div>
                            <div>
-                           <button  className="btn bg-[#e63746] border-none text-white hover:bg-white hover:text-black">Cancel </button>
+                           <button onClick={()=>handleCancel(application._id)} className="btn bg-[#e63746] border-none text-white hover:bg-white hover:text-black">Cancel </button>
                            </div>
                         </div>
 

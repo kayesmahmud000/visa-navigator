@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import PageHeading from "./PageHeading";
 import VisaCard from "./VisaCard";
+import { FaArrowRight } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 
 const LeatestVisa = () => {
@@ -23,6 +25,9 @@ console.log(latestVisa)
                 }
                </div>
             </section>
+            <div className="flex justify-end">
+            <Link to={`/allVisas`} >  <button className="btn bg-[#e63746] hover:border-[#e63746] text-white hover:bg-white hover:text-black">See All Visa <FaArrowRight /></button></Link>
+            </div>
         </div>
     );
 };

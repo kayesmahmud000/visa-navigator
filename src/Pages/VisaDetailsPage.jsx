@@ -8,6 +8,7 @@ import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 import { authContext } from '../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 // CSS Modules, react-datepicker-cssmodules.css
 // import 'react-datepicker/dist/react-datepicker-cssmodules.css';
@@ -60,6 +61,13 @@ const VisaDetailsPage = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'Visa Application Added successful!',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                  })
+            }
         })
     }
     return (

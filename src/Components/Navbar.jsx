@@ -62,7 +62,7 @@ const Navbar = () => {
                         onMouseLeave={() => setIsHovered(false)}
                     >
                         <img src={users?.photoURL} className='w-14 h-14 object-cover rounded-full' alt="User" />
-                        {isHovered && <div className=' flex justify-center  absolute   -left-3 right-0  gap-3 rounded-xl shadow-md bg-[#e1c6b7] p-3  flex-col'>
+                        {isHovered && <div className=' flex justify-center  absolute z-10  -left-3 right-0  gap-3 rounded-xl shadow-md bg-[#e1c6b7] p-3  flex-col'>
                             <span className="display-name text-2xl text-start font-bold">{users?.displayName}</span>
                             <button onClick={handleSignout} className=' btn mr-2 md:mr-4 bg-[#e63746] text-white hover:bg-white hover:text-black'>Sign Out</button></div>
                         }

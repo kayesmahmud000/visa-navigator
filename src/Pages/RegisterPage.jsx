@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { authContext } from '../Provider/AuthProvider';
+import toast from 'react-hot-toast';
 
 const RegisterPage = () => {
     const {handleGoogle, handleUpdateUser, setUsers, handleCreateUser}= useContext(authContext)
@@ -36,12 +37,14 @@ const RegisterPage = () => {
             handleUpdateUser({displayName:name, photoURL:photo})
             .then(()=>{
                 navigate('/')
+                toast.success("Register Successful")
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 // ..
                 console.log( errorCode ,errorMessage)
+                toast.error("Login Filed")
               });
             
         })
@@ -59,12 +62,14 @@ const RegisterPage = () => {
         .then(result=>{
             const user=result.user
             setUsers(user)
+            toast.success("Login Successful")
             navigate(location?.state? location.state:'/')
         }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             // ..
             console.log( errorCode ,errorMessage)
+            toast.error("Login Filed")
           });
 
     }

@@ -7,6 +7,7 @@ import 'aos/dist/aos.css'; // You can also use <link> for styles
 AOS.init();
 
 
+
 const MainLayout = () => {
     return (
         <div>
@@ -19,7 +20,7 @@ const MainLayout = () => {
             <footer className="w-11/12 mx-auto my-5"> 
             <Footer></Footer>
             </footer>
-            
+           
         </div>
     );
 };
