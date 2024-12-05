@@ -32,7 +32,7 @@ const RegisterPage = () => {
        
         .then(result=>{
             const user= result.user
-            console.log(user)
+            // console.log(user)
             setUsers(user)
             handleUpdateUser({displayName:name, photoURL:photo})
             .then(()=>{
@@ -43,7 +43,7 @@ const RegisterPage = () => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 // ..
-                console.log( errorCode ,errorMessage)
+                // console.log( errorCode ,errorMessage)
                 toast.error("Login Filed")
               });
             
@@ -52,7 +52,7 @@ const RegisterPage = () => {
             const errorCode = error.code;
             const errorMessage = error.message;
             // ..
-            console.log( errorCode ,errorMessage)
+            // console.log( errorCode ,errorMessage)
           });
 
         
@@ -68,7 +68,7 @@ const RegisterPage = () => {
             const errorCode = error.code;
             const errorMessage = error.message;
             // ..
-            console.log( errorCode ,errorMessage)
+            // console.log( errorCode ,errorMessage)
             toast.error("Login Filed")
           });
 

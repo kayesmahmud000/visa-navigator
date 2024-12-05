@@ -10,16 +10,16 @@ const VisaApplications = () => {
     const [applications, setApplication] = useState([])
     const [search ,setSearch]=useState("")
 
-    console.log(search)
+    // console.log(search)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/application/${users.email}`)
+        fetch(`https://visa-nevigator.vercel.app/application/${users.email}`)
             .then(res => res.json())
             .then(data => setApplication(data))
     }, [])
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/applications?searchParams=${search}`)
+        fetch(`https://visa-nevigator.vercel.app/applications?searchParams=${search}`)
         .then(res => res.json())
         .then(data => setApplication(data))
     },[search])
@@ -36,12 +36,12 @@ const VisaApplications = () => {
             confirmButtonText: "Yes, Delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/application/${id}`, {
+                fetch(`https://visa-nevigator.vercel.app/application/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data)
+                        // console.log(data)
                         if (data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",

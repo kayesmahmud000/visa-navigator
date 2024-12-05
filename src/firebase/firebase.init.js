@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAZWlMzMEfoiwKz9AxjDGTBVgzAPfWFrFw",
-  authDomain: "navi-visa.firebaseapp.com",
-  projectId: "navi-visa",
-  storageBucket: "navi-visa.firebasestorage.app",
-  messagingSenderId: "779661726115",
-  appId: "1:779661726115:web:3930e8b9bee998f665ca16"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId
 };
 
 // Initialize Firebase

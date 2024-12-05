@@ -14,7 +14,7 @@ const Myaddedvisas = () => {
   
     useEffect(() => {
 
-        fetch(`http://localhost:5000/addVisa/${users?.email}`)
+        fetch(`https://visa-nevigator.vercel.app/addVisa/${users?.email}`)
             .then(res => res.json())
             .then(data => setMyVisa(data))
 
@@ -31,12 +31,12 @@ const Myaddedvisas = () => {
             confirmButtonText: "Yes, Delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/addVisa/${id}`, {
+                fetch(`https://visa-nevigator.vercel.app/addVisa/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data)
+                        // console.log(data)
                         if (data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",
@@ -70,9 +70,9 @@ const Myaddedvisas = () => {
         const application_method = form.application_method.value;
         
         const updateVisa= {photo, name, visType, processing, age, fee, validity, application_method}
-        console.log(updateVisa)
+        // console.log(updateVisa)
 
-        fetch(`http://localhost:5000/addVisa/${selectVisa._id}`, {
+        fetch(`https://visa-nevigator.vercel.app/addVisa/${selectVisa._id}`, {
             method:'PUT',
             headers:{
                 'Content-Type': 'application/json'
@@ -81,7 +81,7 @@ const Myaddedvisas = () => {
         })
         .then(res => res.json())
         .then(data=>{
-            console.log(data)
+            // console.log(data)
             if(data.result.modifiedCount>0){
                 Swal.fire({
                     title: 'Visa Update successful!',
@@ -96,11 +96,11 @@ const Myaddedvisas = () => {
            
         })
         .catch(error=>{
-            console.log(error)
+            // console.log(error)
         })
        
     }
-    console.log(myVisa)
+    // console.log(myVisa)
     return (
         <div className='min-h-screen bg-[#f2faef] p-10 container mx-auto'>
             <div>
@@ -245,7 +245,7 @@ export default Myaddedvisas;
 
 //   useEffect(() => {
 //     if (users?.email) {
-//       fetch(`http://localhost:5000/addVisa/${users.email}`)
+//       fetch(`https://visa-nevigator.vercel.app/addVisa/${users.email}`)
 //         .then(res => res.json())
 //         .then(data => setMyVisa(data))
 //         .catch(error => console.error(error));
@@ -263,7 +263,7 @@ export default Myaddedvisas;
 //       confirmButtonText: "Yes, delete it!"
 //     }).then((result) => {
 //       if (result.isConfirmed) {
-//         fetch(`http://localhost:5000/addVisa/${id}`, {
+//         fetch(`https://visa-nevigator.vercel.app/addVisa/${id}`, {
 //           method: "DELETE"
 //         })
 //           .then(res => res.json())
@@ -288,7 +288,7 @@ export default Myaddedvisas;
 //     const formData = new FormData(e.target);
 //     const updatedVisa = Object.fromEntries(formData.entries());
 
-//     fetch(`http://localhost:5000/addVisa/${selectedVisa._id}`, {
+//     fetch(`https://visa-nevigator.vercel.app/addVisa/${selectedVisa._id}`, {
 //       method: "PUT",
 //       headers: { 'Content-Type': 'application/json' },
 //       body: JSON.stringify(updatedVisa)

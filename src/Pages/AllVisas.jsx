@@ -9,7 +9,7 @@ const AllVisas = () => {
     const loadedAllVisas = useLoaderData();
     const [allVisas, setAllVisas] = useState(loadedAllVisas);
     const [filter, setFilter] = useState("all");
-console.log(loadedAllVisas)
+// console.log(loadedAllVisas)
     useEffect(() => {
         if (filter === 'all') {
             setAllVisas(loadedAllVisas);
@@ -17,7 +17,7 @@ console.log(loadedAllVisas)
          else {
             const filteredVisas = [...loadedAllVisas].filter(visa => visa.visType === filter);
             setAllVisas(filteredVisas)
-            console.log(filteredVisas)
+            // console.log(filteredVisas)
         }
        
     }, [filter, loadedAllVisas]);

@@ -16,9 +16,9 @@ const VisaCard = ({ visa }) => {
     }=visa
 
     const handleSeeDetails=id=>{
-        console.log(id)
+       
             
-            fetch(`http://localhost:5000/visa/${id}`)
+            fetch(`https://visa-nevigator.vercel.app/visa/${id}`)
     }
     return (
         <div className='text-black'>

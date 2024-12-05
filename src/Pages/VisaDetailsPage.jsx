@@ -49,9 +49,9 @@ const VisaDetailsPage = () => {
         const cost = fee
         const applied_date = startDate.toLocaleDateString("en-CA")
         const application={email,firstName, lastName , cost , applied_date, validity, processing,visType ,name,photo}
-        console.log(application)
+        // console.log(application)
         setIsModal(false)
-        fetch("http://localhost:5000/application",{
+        fetch("https://visa-nevigator.vercel.app/application",{
             method:"POST",
             headers:{
                 "content-type":"application/json"
@@ -60,7 +60,7 @@ const VisaDetailsPage = () => {
         })
         .then(res=>res.json())
         .then(data=>{
-            console.log(data)
+            // console.log(data)
             if(data.insertedId){
                 Swal.fire({
                     title: 'Visa Application Added successful!',

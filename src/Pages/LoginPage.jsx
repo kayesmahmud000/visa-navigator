@@ -20,7 +20,7 @@ const LoginPage = () => {
         handleLogin(email, password)
         .then(result=>{
             const user= result.user
-            console.log(user)
+            // console.log(user)
             setUsers(user)
             navigate(location?.state? location.state:'/')
             toast.success("Login Successful")
@@ -30,7 +30,7 @@ const LoginPage = () => {
             const errorCode = error.code;
             const errorMessage = error.message;
             // ..
-            console.log( errorCode ,errorMessage)
+            // 
             setErrorMessage(errorMessage)
             toast.error("Login Filed")
           });
@@ -47,7 +47,7 @@ const LoginPage = () => {
             const errorCode = error.code;
             const errorMessage = error.message;
             // ..
-            console.log( errorCode ,errorMessage)
+           
             toast.error("Login Filed")
           });
 

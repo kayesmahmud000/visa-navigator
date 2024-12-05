@@ -47,7 +47,7 @@ const AddVisa = () => {
             email
         };
 
-        fetch("http://localhost:5000/addVisas", {
+        fetch("https://visa-nevigator.vercel.app/addVisas", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -56,7 +56,7 @@ const AddVisa = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Visa Added successful!',
@@ -66,7 +66,7 @@ const AddVisa = () => {
                 }
             })
 
-        console.log(visaCollection);
+        ;
     };
 
     return (
