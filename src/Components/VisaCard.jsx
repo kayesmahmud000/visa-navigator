@@ -21,8 +21,8 @@ const VisaCard = ({ visa }) => {
             fetch(`http://localhost:5000/visa/${id}`)
     }
     return (
-        <div>
-            <div className="card rounded-md h-[550px] bg-white hover:bg-[#e1c6b7] border border-gray-400  " data-aos="flip-left"
+        <div className='text-black'>
+            <div className="card rounded-md h-[550px]  hover:bg-[#e1c6b7] border border-gray-400  " data-aos="flip-left"
      data-aos-easing="ease-out-cubic"
      data-aos-duration="2000">
                 <figure className='p-3'>
@@ -45,7 +45,7 @@ const VisaCard = ({ visa }) => {
                         <div className='font-semibold' >Processing Time: <span className="  font-normal ">{processing}</span></div>
                         <div className='font-semibold mr-5' >Age Restriction: <span className=" font-normal  ">{age}</span></div>
                         <div className='font-semibold' >Fee: <span className=" font-normal  "> $ {fee} </span></div>
-                        <Link to={`/detailsPage/${_id}`} >  <button onClick={()=>handleSeeDetails(_id)} className="btn bg-[#e63746] border-none text-white hover:bg-white hover:text-black">See Details <FaArrowRight /></button></Link>
+                        <Link to={`/detailsPage/${_id}`} >  <button onClick={()=>handleSeeDetails(_id)} className="btn bg-[#e63746] hover:border-[#e63746] text-white hover:bg-white hover:text-black">See Details <FaArrowRight /></button></Link>
                     </div>
                 </div>
             </div>

@@ -102,7 +102,7 @@ const Myaddedvisas = () => {
     }
     console.log(myVisa)
     return (
-        <div className='min-h-screen'>
+        <div className='min-h-screen bg-[#f2faef] p-10 container mx-auto'>
             <div>
                 <PageHeading title={" Your Visa Submissions"} subtitle={"Update or delete your added visa information"}></PageHeading>
             </div>
@@ -113,7 +113,7 @@ const Myaddedvisas = () => {
                         <div className=" flex flex-col border border-gray-300  mb-10 p-5 bg-slate-200 rounded-md text-black lg:flex-row  ">
                             <img
                                 src={visa.photo}
-                                className=" w-60  rounded-lg  object-cover   " />
+                                className=" lg:w-60  rounded-lg  object-cover   " />
                             <div>
                                 <div className="card-body">
                                     <h2 className="card-title text-4xl">
@@ -150,7 +150,7 @@ const Myaddedvisas = () => {
                 }
 
                 {isModal && selectVisa && (
-                    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+                    <div className=" fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
                         <div className="bg-white text-center justify-center items-start p-6 rounded-md shadow-md">
 
                             <form onSubmit={handleUpdateFrom} className="card-body">

@@ -72,10 +72,10 @@ const VisaDetailsPage = () => {
     }
     return (
         <div>
-            <section>
+            <section className='w-11/12 mb-10 mx-auto'>
                 <Navbar></Navbar>
             </section>
-            <section>
+            <section className='bg-[#f2faef]  p-10 container mx-auto'>
                 <div className='my-5'>
                     <PageHeading title={"Visa Insights"} subtitle={"Everything You Need to Know About Your Visa"}></PageHeading>
                 </div>
@@ -162,7 +162,7 @@ const VisaDetailsPage = () => {
                     </div>
                 </div>
             )}
-            <section>
+            <section className='w-11/12 mt-10 mx-auto'>
                 <Footer></Footer>
             </section>
         </div>

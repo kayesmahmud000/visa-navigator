@@ -5,5 +5,26 @@
 
 body{
     font-family: Lato;
-    overflow: scroll;
+    overflow:scroll;
+    margin: 0;
+    padding: 0;
+}
+body.light {
+    --background-color: white;
+    --text-color: black;
+}
+
+body.dark {
+    --background-color: black;
+    --text-color: white;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    padding: 16px;
+    margin: auto;
 }

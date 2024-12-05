@@ -4,13 +4,13 @@ import FaqsImg from "../assets/faqs.jpg"
 
 const FaQs = () => {
     return (
-        <div>
+        <div className='bg-[#f2faef] p-10 text-black'>
             <div>
                 <PageHeading title={'Visa FAQs & Guides'}
                     subtitle={"Our Go-To Resource for Visa-related Questions"}></PageHeading>
             </div>
-            <section className='flex justify-between  my-10 bg-slate-200 gap-5 p-10'>
-                <div className="join join-vertical w-4/6 ">
+            <section className='lg:flex justify-between  my-10 bg-slate-200 gap-5 p-10'>
+                <div className="join join-vertical lg:w-4/6 ">
                     <div className="collapse collapse-arrow join-item bg-white mb-4">
                         <input type="radio" name="my-accordion-4" defaultChecked />
                         <div className="collapse-title text-xl  font-semibold">Determine the Visa Type</div>
@@ -40,7 +40,7 @@ const FaQs = () => {
                         </div>
                     </div>
                 </div>
-                <div className='w-[450px] '>
+                <div className='lg:w-[450px] lg:flex md:hidden  mt-5 lg:mt-0 '>
                     <img src={FaqsImg}className='w-full rounded-lg'  alt="" />
                 </div>
             </section>
