@@ -7,7 +7,7 @@ import { BsArrowRight } from 'react-icons/bs';
 
 const Services = () => {
     return (
-        <div className='bg-[#f2faef] text-black p-10'>
+        <div className='bg-[#f2faef] text-black p-2'>
             <div>
                 <PageHeading title={'Services'} subtitle={'Outstanding Immigration Visa Services'}></PageHeading>
             </div>

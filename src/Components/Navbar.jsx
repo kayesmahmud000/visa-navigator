@@ -52,8 +52,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className='flex items-center justify-center'>
-                    <img src={Logo} alt="" className=' w-5 md:w-11' />
-                    <h1 className='md:text-4xl font-bold '>NAVI VISA.</h1>
+                    <img src={Logo} alt="" className=' w-6 md:w-12' />
+                    <h1 className='md:text-4xl font-bold ml-3 '>NAVI <br /> VISA.</h1>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -86,18 +86,18 @@ const Navbar = () => {
                 
             {
                     users?.email ? <div
-                        className="user-photo relative w-fit"
+                        className="user-photo relative "
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}
                     >
                         <img src={users?.photoURL} className='w-14 h-14 object-cover rounded-full' alt="User" />
-                        {isHovered && <div className=' flex justify-center  absolute z-10  -left-3 right-0  gap-3 rounded-xl shadow-md bg-[#e1c6b7] w-fit p-3  flex-col'>
-                            <span className="display-name text-2xl text-start font-bold">{users?.displayName}</span>
-                            <button onClick={handleSignout} className=' btn mr-2 md:mr-4 bg-[#e63746] text-white hover:bg-white hover:text-black'>Sign Out</button></div>
+                        {isHovered && <div className=' flex justify-center  absolute z-10    gap-3 rounded-xl shadow-md bg-[#e1c6b7] top-0 right-0 -left-5  w-fit p-2  flex-col'>
+                            <span className="display-name lg:text-2xl text-start font-bold">{users?.displayName}</span>
+                            <button onClick={handleSignout} className=' btn  mr-2 md:mr-4 bg-[#e63746] text-white hover:bg-white hover:text-black'>Sign Out</button></div>
                         }
-                    </div> : <div>
-                        <Link to={"/login"}><button className=' btn mr-2 md:mr-4 bg-[#5c7cfa] text-white'>Login</button></Link>
-                        <Link to={'/register'}><button className=' btn bg-[#be4bdb] text-white '>Register</button></Link>
+                    </div> : <div className='flex justify-end'>
+                        <Link to={"/login"}><button className=' btn btn-sm md:btn-md mr-2 md:mr-4 bg-[#5c7cfa] text-white'>Login</button></Link>
+                        <Link to={'/register'}><button className='btn md:btn-md btn-sm bg-[#be4bdb] text-white '>Register</button></Link>
                     </div>
                 }
 

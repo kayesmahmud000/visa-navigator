@@ -22,7 +22,7 @@ const VisaCard = ({ visa }) => {
     }
     return (
         <div className='text-black'>
-            <div className="card rounded-md h-[550px]  hover:bg-[#e1c6b7] border border-gray-400  " data-aos="flip-left"
+            <div className="card rounded-md md:h-[550px]  hover:bg-[#e1c6b7] border border-gray-400  " data-aos="flip-left"
      data-aos-easing="ease-out-cubic"
      data-aos-duration="2000">
                 <figure className='p-3'>

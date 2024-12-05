@@ -14,7 +14,7 @@ const LeatestVisa = () => {
         .then(data=>setLatestVisa(data))
     },[])
     return (
-        <div className="bg-[#f2faef] p-10">
+        <div className="bg-[#f2faef] py-10">
             <section>
                 <PageHeading title={"Discover New Visas"} subtitle={"Find the Latest Visas Tailored to Your Needs, Including Tourist, Student, and Official Visas"}></PageHeading>
             </section>
