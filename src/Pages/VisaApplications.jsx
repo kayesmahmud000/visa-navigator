@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import PageHeading from '../Components/PageHeading';
 import Swal from 'sweetalert2';
+import { authContext } from '../Provider/AuthProvider';
 
 const VisaApplications = () => {
-    const loadedApplication= useLoaderData()
-    const [applications, setApplication]=useState(loadedApplication)
+    const {users} = useContext(authContext)
+    
+    const [applications, setApplication]=useState([])
+
+    useEffect(()=>{
+        fetch(`http://localhost:5000/application/${users.email}`)
+        .then(res=>res.json())
+        .then(data=>setApplication(data))
+    },[])
     
 
     const handleCancel=id=>{
@@ -41,13 +49,17 @@ const VisaApplications = () => {
         
        
     }
-    console.log(loadedApplication)
+   
     return (
-        <div>
+        <div className='min-h-screen' >
             <section>
                 <PageHeading title={"My Visa Applications Overview"} subtitle={"Track Your Visa Application Status and History"}></PageHeading>
             </section>
+            {
+                    applications.length ===0 &&  <p className='my-32 text-3xl text-[#e63746] font-bold text-center'>You not added any visa application</p>
+                }
             <section className='container mx-auto my-10 grid lg:grid-cols-2'>
+               
            {
             applications.map(application=> <div key={application._id} className="hero  my-5 px-3 ">
                 <div className="hero-content flex-col bg-[#d0bfff]  rounded-lg justify-between text-black lg:flex-row  ">

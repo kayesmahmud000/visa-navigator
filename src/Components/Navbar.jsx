@@ -10,11 +10,11 @@ const Navbar = () => {
 
 
     const link = <>
-        <li><NavLink className="text-lg " to={"/"}>Home</NavLink></li>
-        <li><NavLink className="text-lg " to={"/allVisas"}>All visas</NavLink></li>
-        <li><NavLink className="text-lg " to={"/addVisa"}>Add Visa</NavLink></li>
-        <li><NavLink className="text-lg " to={"/myVisa"}>My added visas</NavLink></li>
-        <li><NavLink className="text-lg " to={"/visaApplication"}>My Visa applications</NavLink></li>
+        <li><NavLink className={({isActive})=>isActive?"text-[#9538E2] mb-3 px-3 py-2  text-sm lg:text-lg" :" mb-4 px-3 text-sm lg:text-lg"} to={"/"}>Home</NavLink></li>
+        <li><NavLink className={({isActive})=>isActive?"text-[#9538E2]  mb-3 px-3 py-2  text-sm lg:text-lg " :" mb-4 px-3 text-sm lg:text-lg"} to={"/allVisas"}>All visas</NavLink></li>
+        <li><NavLink className={({isActive})=>isActive?"text-[#9538E2]  mb-3 px-3 py-2  text-sm lg:text-lg " :" mb-4 px-3 text-sm lg:text-lg"} to={"/addVisa"}>Add Visa</NavLink></li>
+        <li><NavLink className={({isActive})=>isActive?"text-[#9538E2]  mb-3 px-3 py-2  text-sm lg:text-lg " :" mb-4 px-3 text-sm lg:text-lg"} to={"/myVisa"}>My added visas</NavLink></li>
+        <li><NavLink className={({isActive})=>isActive?"text-[#9538E2]  mb-3 px-3 py-2  text-sm lg:text-lg " :" mb-4 px-3 text-sm lg:text-lg"} to={"/visaApplication"}>My Visa applications</NavLink></li>
 
 
     </>
@@ -48,7 +48,7 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="flex gap-3 px-1">
                     {link}
                 </ul>
             </div>

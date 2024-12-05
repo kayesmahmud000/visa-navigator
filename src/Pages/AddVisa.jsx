@@ -1,12 +1,15 @@
 
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Swal from 'sweetalert2'
 import PageHeading from '../Components/PageHeading';
+import { authContext } from '../Provider/AuthProvider';
 
 const AddVisa = () => {
-    const [validPassport, setValidPassport] = useState(false);
-    const [visaApplication, setVisaApplication] = useState(false);
-    const [recentPassport, setRecentPassport] = useState(false);
+    const { users } = useContext(authContext)
+
+    const [validPassport, setValidPassport] = useState("");
+    const [visaApplication, setVisaApplication] = useState("");
+    const [recentPassport, setRecentPassport] = useState("");
 
     const handleAddVisa = e => {
         e.preventDefault();
@@ -16,10 +19,19 @@ const AddVisa = () => {
         const visType = form.visType.value;
         const processing = form.processing.value;
         const description = form.description.value;
-        const age =parseInt(form.age.value);
-        const fee =parseInt( form.fee.value);
+        const age = parseInt(form.age.value);
+        const fee = parseInt(form.fee.value);
         const validity = form.validity.value;
         const application_method = form.application_method.value;
+        const email = users.email;
+
+        const requirement_document = [
+            validPassport,
+            visaApplication,
+            recentPassport,
+        ]
+
+
 
         const visaCollection = {
             photo,
@@ -31,38 +43,37 @@ const AddVisa = () => {
             fee,
             validity,
             application_method,
-            validPassport,
-            visaApplication,
-            recentPassport,
+            requirement_document,
+            email
         };
-        
-        fetch("http://localhost:5000/addVisas", {
-            method:"POST",
-            headers:{
-                "content-type":"application/json"
-            },
-            body:JSON.stringify(visaCollection)
-        })
-        .then(res =>res.json())
-        .then(data=>{
-            console.log(data)
-            if(data.insertedId){
-                Swal.fire({
-                    title: 'Visa Added successful!',
-                    icon: 'success',
-                    confirmButtonText: 'Ok'
-                  })
-            }
-        })
 
-        console.log(visaCollection); 
+        fetch("http://localhost:5000/addVisas", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(visaCollection)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Visa Added successful!',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    })
+                }
+            })
+
+        console.log(visaCollection);
     };
 
     return (
         <div>
             <div className="card rounded-none bg-[#f2faef] w-full max-w-7xl px-4 mx-auto ">
                 <PageHeading title={"Add a New Visa"} subtitle={"Complete the Form to Add Visa Details"}></PageHeading>
-               
+
                 <form onSubmit={handleAddVisa} className="card-body">
                     <div className="md:flex mb-4">
                         <div className="form-control md:w-1/2 mr-5">
@@ -138,15 +149,15 @@ const AddVisa = () => {
                             </label>
                             <div className='grid grid-cols-2 gap-2 justify-between'>
                                 <label>
-                                    <input type="checkbox" name="validPassport" checked={validPassport} onChange={() => setValidPassport(!validPassport)} />
+                                    <input type="checkbox" name="validPassport" value={'Valid passport'} checked={validPassport} onChange={(e) => setValidPassport(e.target.value)} />
                                     <span className="label-text"> Valid passport</span>
                                 </label>
                                 <label>
-                                    <input type="checkbox" name="visaApplication" checked={visaApplication} onChange={() => setVisaApplication(!visaApplication)} />
+                                    <input type="checkbox" name="visaApplication" value={" Visa application form"} checked={visaApplication} onChange={(e) => setVisaApplication(e.target.value)} />
                                     <span className="label-text"> Visa application form</span>
                                 </label>
                                 <label>
-                                    <input type="checkbox" name="recentPassport" checked={recentPassport} onChange={() => setRecentPassport(!recentPassport)} />
+                                    <input type="checkbox" name="recentPassport" value={"Recent passport-sized photograph"} checked={recentPassport} onChange={(e) => setRecentPassport(e.target.value)} />
                                     <span className="label-text"> Recent passport-sized photograph</span>
                                 </label>
                             </div>
