@@ -1,5 +1,6 @@
 import { FaArrowRight } from 'react-icons/fa6';
 import slideImg2 from '../assets/slider1.jpg'
+import { Typewriter } from 'react-simple-typewriter';
 
 const Slider3 = () => {
     return (
@@ -10,7 +11,16 @@ const Slider3 = () => {
                         src={slideImg2}
                         className="lg:max-w-lg rounded-lg " />
                     <div className=''>
-                        <h1 className="text-2xl text-center lg:text-start lg:text-5xl font-bold">Effortless Visa Processing!</h1>
+                        <h1 className="text-2xl text-center lg:text-start lg:text-5xl font-bold"><Typewriter
+            words={["Effortless Visa Processing!"]}
+            loop={5}
+            cursor
+            cursorStyle='_'
+            typeSpeed={100}
+            deleteSpeed={50}
+            delaySpeed={1000}
+            
+          /> </h1>
                         <p className="py-6">
                         "From visa requirements to application tracking, our dynamic platform offers all the tools you need for efficient and error-free visa processing, tailored to your travel needs."
                         </p>

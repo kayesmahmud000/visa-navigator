@@ -1,3 +1,4 @@
+import { Typewriter } from 'react-simple-typewriter';
 import sliderImg from '../assets/slider2.jpg'
 
 const Slider2 = () => {
@@ -9,7 +10,16 @@ const Slider2 = () => {
                         src={sliderImg}
                         className="   rounded-lg w-lg lg:h-[400px] md:max-w-lg" />
                     <div>
-                        <h1 className=" text-2xl lg:text-5xl font-bold">Navigate Your Way to New Horizons</h1>
+                        <h1 className=" text-2xl lg:text-4xl font-bold"><Typewriter
+            words={["Navigate Your Way to New Horizons"]}
+            loop={5}
+            cursor
+            cursorStyle='_'
+            typeSpeed={70}
+            
+            delaySpeed={1000}
+            
+          /></h1>
                         <p className="py-6">
                         "Discover a hassle-free way to manage your visa applications with detailed information, online submission, and tracking features, ensuring you reach your travel destinations smoothly."
                         </p>

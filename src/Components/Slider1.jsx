@@ -1,5 +1,6 @@
 
 import { FaArrowRight } from "react-icons/fa6";
+import { Typewriter } from 'react-simple-typewriter'
 
 const Slider1 = () => {
     return (
@@ -12,7 +13,16 @@ const Slider1 = () => {
   <div className="hero-overlay bg-opacity-90"></div>
   <div className="hero-content text-white text-center">
     <div className="max-w-2xl">
-      <h1 className="mb-5 text-5xl font-bold">Simplify Your Visa Journey.</h1>
+      <h1 className="mb-5 text-5xl font-bold"><Typewriter
+            words={["Simplify Your Visa Journey"]}
+            loop={5}
+            cursor
+            cursorStyle='_'
+            typeSpeed={100}
+            deleteSpeed={50}
+            delaySpeed={1000}
+            
+          /></h1>
       <p className="mb-5">
       "Our comprehensive portal helps you navigate visa requirements effortlessly, providing a streamlined application process and real-time tracking for a stress-free experience."
       </p>

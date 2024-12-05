@@ -34,7 +34,7 @@ const Navbar = () => {
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5"
+                            className="h-7 w-7"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor">
@@ -47,7 +47,7 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[10] mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-base-100 text-black rounded-box z-[10] mt-3 w-40 p-2 opacity-0 shadow">
                         {link}
                     </ul>
                 </div>
@@ -62,12 +62,12 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end"> 
-            <label className="swap mr-5 swap-rotate">
+            <label className="swap md:mr-5 swap-rotate">
                 <input type="checkbox" checked={isDarkMode} onChange={toggleTheme} className="theme-controller" />
 
                 {/* sun icon */}
                 <svg
-                    className="swap-off h-10 w-10 fill-current"
+                    className="swap-off h-7 w-7 fill-current"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24">
                     <path
@@ -76,7 +76,7 @@ const Navbar = () => {
 
                 {/* moon icon */}
                 <svg
-                    className="swap-on h-10 w-10 fill-current"
+                    className="swap-on h-5 w-5 fill-current"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24">
                     <path
@@ -86,12 +86,12 @@ const Navbar = () => {
                 
             {
                     users?.email ? <div
-                        className="user-photo relative w-32"
+                        className="user-photo relative w-fit"
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}
                     >
                         <img src={users?.photoURL} className='w-14 h-14 object-cover rounded-full' alt="User" />
-                        {isHovered && <div className=' flex justify-center  absolute z-10  -left-3 right-0  gap-3 rounded-xl shadow-md bg-[#e1c6b7] p-3  flex-col'>
+                        {isHovered && <div className=' flex justify-center  absolute z-10  -left-3 right-0  gap-3 rounded-xl shadow-md bg-[#e1c6b7] w-fit p-3  flex-col'>
                             <span className="display-name text-2xl text-start font-bold">{users?.displayName}</span>
                             <button onClick={handleSignout} className=' btn mr-2 md:mr-4 bg-[#e63746] text-white hover:bg-white hover:text-black'>Sign Out</button></div>
                         }

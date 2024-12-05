@@ -1,8 +1,13 @@
-import React from 'react';
 
+import Logo from '../assets/logo.png'
 const Footer = () => {
     return (
-        <footer className="footer footer-center bg-base-200 text-base-content rounded p-10">
+        <footer className="footer footer-center bg-black text-white  rounded p-10">
+            
+             <div className='flex items-center justify-center'>
+                    <img src={Logo} alt="" className=' w-5 md:w-11' />
+                    <h1 className='text-3xl md:text-6xl font-bold '>NAVI VISA.</h1>
+                </div>
             <nav className="grid grid-flow-col gap-4">
                 <a className="link link-hover">About us</a>
                 <a className="link link-hover">Contact</a>
