@@ -82,7 +82,7 @@ const VisaApplications = () => {
                                 <div className='font-semibold mr-3' >Processing Time: <span className="  font-normal ">{application.processing}</span></div><br />
                                
                                 <div className='font-semibold mr-4' >Fee: <span className=" font-normal  ">{application.cost} $</span></div>
-                                <div className='font-semibold' >Applied Date: <span className=" font-normal  ">{application.applied_date} $</span></div>
+                                <div className='font-semibold' >Applied Date: <span className=" font-normal  "> $ {application.applied_date} </span></div>
                                 
                             </div>
                            <div>

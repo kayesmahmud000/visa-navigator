@@ -82,15 +82,15 @@ const Myaddedvisas = () => {
         .then(res => res.json())
         .then(data=>{
             console.log(data)
-            if(data.modifiedCount>0){
+            if(data.result.modifiedCount>0){
                 Swal.fire({
                     title: 'Visa Update successful!',
                     icon: 'success',
                     confirmButtonText: 'Ok'
 
                 })
-                const newVisa =myVisa.map(visa => visa._id === selectVisa._id ? data : visa)
-            setMyVisa(newVisa);
+                // const newVisa =myVisa.map(visa => visa._id === selectVisa._id ? data : visa)
+            setMyVisa([data.updatedDocument]);
             setIsModal(false)
             }
            
@@ -98,17 +98,7 @@ const Myaddedvisas = () => {
         .catch(error=>{
             console.log(error)
         })
-        // fetch(`http://localhost:5000/addVisa/${selectedVisa._id}`, {
-        //     //       method: "PUT",
-        //     //       headers: { 'Content-Type': 'application/json' },
-        //     //       body: JSON.stringify(updatedVisa)
-        //     //     })
-        //     //       .then(res => res.json())
-        //     //       .then(data => {
-        //     //         setMyVisa(myVisa.map(visa => visa._id === selectedVisa._id ? data : visa));
-        //     //         setIsModal(false);
-        //     //       })
-        //     //       .catch(error => console.error(error));
+       
     }
     console.log(myVisa)
     return (
@@ -117,9 +107,9 @@ const Myaddedvisas = () => {
                 <PageHeading title={" Your Visa Submissions"} subtitle={"Update or delete your added visa information"}></PageHeading>
             </div>
 
-            <div className='max-w-4xl mx-auto   rounded-md'>
+            <div className='max-w-4xl mx-auto my-10  rounded-md'>
                 {
-                    myVisa.map(visa => <div key={visa._id} className="  ">
+                    myVisa?.map(visa => <div key={visa._id} className="  ">
                         <div className=" flex flex-col border border-gray-300  mb-10 p-5 bg-slate-200 rounded-md text-black lg:flex-row  ">
                             <img
                                 src={visa.photo}
@@ -142,7 +132,7 @@ const Myaddedvisas = () => {
                                         <div className='font-semibold' >Application Method: <span className="  font-normal ">{visa.application_method}</span></div>
 
 
-                                        <div className='font-semibold' >Fee: <span className=" font-normal  ">{visa.fee} $</span></div>
+                                        <div className='font-semibold' >Fee: <span className=" font-normal  "> $ {visa.fee} </span></div>
 
                                     </div>
                                     <div>
@@ -156,7 +146,7 @@ const Myaddedvisas = () => {
                     </div>)
                 }
                 {
-                    myVisa.length === 0 && <p className='my-32 text-3xl text-[#e63746] font-bold text-center'>You not added any visa</p>
+                    myVisa?.length === 0 && <p className='my-32 text-3xl text-[#e63746] font-bold text-center'>You not added any visa</p>
                 }
 
                 {isModal && selectVisa && (

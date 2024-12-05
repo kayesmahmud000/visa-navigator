@@ -44,7 +44,7 @@ const VisaCard = ({ visa }) => {
                         <div className='font-semibold' >Validity: <span className=" font-normal  ">{validity}</span></div>
                         <div className='font-semibold' >Processing Time: <span className="  font-normal ">{processing}</span></div>
                         <div className='font-semibold mr-5' >Age Restriction: <span className=" font-normal  ">{age}</span></div>
-                        <div className='font-semibold' >Fee: <span className=" font-normal  ">{fee} $</span></div>
+                        <div className='font-semibold' >Fee: <span className=" font-normal  "> $ {fee} </span></div>
                         <Link to={`/detailsPage/${_id}`} >  <button onClick={()=>handleSeeDetails(_id)} className="btn bg-[#e63746] border-none text-white hover:bg-white hover:text-black">See Details <FaArrowRight /></button></Link>
                     </div>
                 </div>
