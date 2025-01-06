@@ -4,6 +4,8 @@ import PageHeading from '../Components/PageHeading';
 import Swal from 'sweetalert2';
 import { authContext } from '../Provider/AuthProvider';
 
+import { RxCross1 } from 'react-icons/rx';
+
 const VisaApplications = () => {
     const { users } = useContext(authContext)
 
@@ -75,9 +77,72 @@ const VisaApplications = () => {
             {
                 applications.length === 0 && <p className='my-32 text-3xl text-[#e63746] font-bold text-center'>You not added any visa application</p>
             }
-            <section className='container mx-auto my-10 grid lg:grid-cols-2'>
+            <section className='my-10  rounded-md'>
+                 <div className="overflow-x-auto">
+                                    <table className="table">
+                                        {/* head */}
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                   #
+                                                </th>
+                                                <th> Visa Image</th>
+                                                <th> Visa Name</th>
+                                                <th>Visa Type</th>
+                                                <th>Validity</th>
+                                                <th>Processing Time</th>
+                                                <th>Fee</th>
+                                                <th>Email</th>
+                                              
+                                                <th>Cancel</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {/* row 1 */}
+                                            {
+                                               applications.map((visa, index)=>    <tr key={index}>
+                                                    <th>
+                                                       {index+1}
+                                                    </th>
+                                                    <td>
+                                                        <div className="flex items-center gap-3">
+                                                            <div className="avatar">
+                                                                <div className="mask mask-squircle h-12 w-12">
+                                                                    <img
+                                                                        src={visa.photo}
+                                                                        alt={visa.name} />
+                                                                </div>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                    {visa.name}
+                                                       
+                                                      
+                                                    </td>
+                                                    <td>{visa.visType}</td>
+                                                    <td>{visa.validity}</td>
+                                                    <td>{visa.processing}</td>
+                                                    <td>$ {visa.cost}</td>
+                                                    <td> {visa.email}</td>
 
-                {
+                                                   
+                                                    <td>
+                                                    <button onClick={() => handleCancel(visa._id)} className="btn bg-[#e63746] border-none text-white hover:bg-white hover:text-black"><RxCross1 /> </button>
+                                                    </td>
+                                                </tr>)
+                                            }
+                                           
+                                           
+                                        
+                                        </tbody>
+                                        
+                                       
+                                    </table>
+                                </div>
+
+                {/* {
                     applications.map(application => <div key={application._id} className="hero  my-5 px-3 ">
                         <div className="hero-content flex-col bg-[#d0bfff]  rounded-lg justify-between text-black lg:flex-row  ">
                             <img
@@ -110,7 +175,7 @@ const VisaApplications = () => {
                             </div>
                         </div>
                     </div>)
-                }
+                } */}
             </section>
         </div>
     );

@@ -3,15 +3,16 @@ import { authContext } from '../Provider/AuthProvider';
 
 import Swal from 'sweetalert2';
 import PageHeading from '../Components/PageHeading';
+import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 
 const Myaddedvisas = () => {
     const { users } = useContext(authContext)
     const [myVisa, setMyVisa] = useState([])
     const [isModal, setIsModal] = useState(false);
-    const [selectVisa ,setSelectVisa]=useState(null);
-    
+    const [selectVisa, setSelectVisa] = useState(null);
 
-  
+
+
     useEffect(() => {
 
         fetch(`https://visa-nevigator.vercel.app/addVisa/${users?.email}`)
@@ -43,7 +44,7 @@ const Myaddedvisas = () => {
                                 text: "Your Visa has been deleted.",
                                 icon: "success"
                             });
-                            const remainVisa = myVisa.filter(visa => visa._id !== id )
+                            const remainVisa = myVisa.filter(visa => visa._id !== id)
                             setMyVisa(remainVisa)
                         }
                     })
@@ -56,7 +57,7 @@ const Myaddedvisas = () => {
         setSelectVisa(visa)
         setIsModal(true)
     }
-    
+
     const handleUpdateFrom = e => {
         e.preventDefault()
         const form = e.target;
@@ -68,37 +69,37 @@ const Myaddedvisas = () => {
         const fee = parseInt(form.fee.value);
         const validity = form.validity.value;
         const application_method = form.application_method.value;
-        
-        const updateVisa= {photo, name, visType, processing, age, fee, validity, application_method}
+
+        const updateVisa = { photo, name, visType, processing, age, fee, validity, application_method }
         // console.log(updateVisa)
 
         fetch(`https://visa-nevigator.vercel.app/addVisa/${selectVisa._id}`, {
-            method:'PUT',
-            headers:{
+            method: 'PUT',
+            headers: {
                 'Content-Type': 'application/json'
             },
-            body:JSON.stringify(updateVisa)
+            body: JSON.stringify(updateVisa)
         })
-        .then(res => res.json())
-        .then(data=>{
-            // console.log(data)
-            if(data.result.modifiedCount>0){
-                Swal.fire({
-                    title: 'Visa Update successful!',
-                    icon: 'success',
-                    confirmButtonText: 'Ok'
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data)
+                if (data.result.modifiedCount > 0) {
+                    Swal.fire({
+                        title: 'Visa Update successful!',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
 
-                })
-                // const newVisa =myVisa.map(visa => visa._id === selectVisa._id ? data : visa)
-            setMyVisa([data.updatedDocument]);
-            setIsModal(false)
-            }
-           
-        })
-        .catch(error=>{
-            // console.log(error)
-        })
-       
+                    })
+                    // const newVisa =myVisa.map(visa => visa._id === selectVisa._id ? data : visa)
+                    setMyVisa([data.updatedDocument]);
+                    setIsModal(false)
+                }
+
+            })
+            .catch(error => {
+                // console.log(error)
+            })
+
     }
     // console.log(myVisa)
     return (
@@ -107,8 +108,71 @@ const Myaddedvisas = () => {
                 <PageHeading title={" Your Visa Submissions"} subtitle={"Update or delete your added visa information"}></PageHeading>
             </div>
 
-            <div className='max-w-4xl mx-auto my-10  rounded-md'>
-                {
+            <div className=' my-10  rounded-md'>
+
+                <div className="overflow-x-auto">
+                    <table className="table">
+                        {/* head */}
+                        <thead>
+                            <tr>
+                                <th>
+                                   #
+                                </th>
+                                <th> Visa Image</th>
+                                <th> Visa Name</th>
+                                <th>Visa Type</th>
+                                <th>Validity</th>
+                                <th>Processing Time</th>
+                                <th>Fee</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {/* row 1 */}
+                            {
+                                myVisa.map((visa, index)=>    <tr key={index}>
+                                    <th>
+                                       {index+1}
+                                    </th>
+                                    <td>
+                                        <div className="flex items-center gap-3">
+                                            <div className="avatar">
+                                                <div className="mask mask-squircle h-12 w-12">
+                                                    <img
+                                                        src={visa.photo}
+                                                        alt={visa.name} />
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </td>
+                                    <td>
+                                    {visa.name}
+                                       
+                                      
+                                    </td>
+                                    <td>{visa.visType}</td>
+                                    <td>{visa.validity}</td>
+                                    <td>{visa.processing}</td>
+                                    <td>$ {visa.fee}</td>
+                                    <td>
+                                    <button onClick={()=>handleUpdate(visa)} className="btn bg-[#e63746] border-none text-white hover:bg-white hover:text-black mr-4"><FaEdit></FaEdit> </button>
+                                    </td>
+                                    <td>
+                                    <button onClick={() => handleDelete(visa._id)} className="btn bg-[#e63746] border-none text-white hover:bg-white hover:text-black"><FaTrashAlt></FaTrashAlt> </button>
+                                    </td>
+                                </tr>)
+                            }
+                           
+                           
+                        
+                        </tbody>
+                        
+                       
+                    </table>
+                </div>
+                {/* {
                     myVisa?.map(visa => <div key={visa._id} className="  ">
                         <div className=" flex flex-col border border-gray-300  mb-10 p-5 bg-slate-200 rounded-md text-black lg:flex-row  ">
                             <img
@@ -144,7 +208,7 @@ const Myaddedvisas = () => {
                             </div>
                         </div>
                     </div>)
-                }
+                } */}
                 {
                     myVisa?.length === 0 && <p className='my-32 text-3xl text-[#e63746] font-bold text-center'>You not added any visa</p>
                 }
@@ -192,7 +256,7 @@ const Myaddedvisas = () => {
                                         <label className="label">
                                             <span className="label-text">Age Restriction.</span>
                                         </label>
-                                        <input type="text" name="age"defaultValue={selectVisa.age} className="input input-bordered w-full" required />
+                                        <input type="text" name="age" defaultValue={selectVisa.age} className="input input-bordered w-full" required />
                                     </div>
                                     <div className="form-control md:w-1/2 ">
                                         <label className="label">
@@ -201,8 +265,8 @@ const Myaddedvisas = () => {
                                         <input type="text" name="fee" defaultValue={selectVisa.fee} className="input input-bordered w-full" required />
                                     </div>
                                 </div>
-                              <div  className="md:flex mb-4">
-                              <div className="form-control md:w-1/2 mr-5">
+                                <div className="md:flex mb-4">
+                                    <div className="form-control md:w-1/2 mr-5">
                                         <label className="label">
                                             <span className="label-text">Validity</span>
                                         </label>
@@ -215,10 +279,10 @@ const Myaddedvisas = () => {
                                         <input type="text" name="application_method" defaultValue={selectVisa.application_method} className="input input-bordered w-full" required />
                                     </div>
 
-                              </div>
+                                </div>
 
                                 <div className="form-control mt-6">
-                                    <button  className="btn  bg-[#e63746]  text-white hover:bg-white hover:border hover:border-[#e63746] hover:text-black">Update</button>
+                                    <button className="btn  bg-[#e63746]  text-white hover:bg-white hover:border hover:border-[#e63746] hover:text-black">Update</button>
                                 </div>
                             </form>
 

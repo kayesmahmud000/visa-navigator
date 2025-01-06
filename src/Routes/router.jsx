@@ -11,6 +11,10 @@ import LoginPage from '../Pages/LoginPage';
 import RegisterPage from '../Pages/RegisterPage';
 import VisaDetailsPage from '../Pages/VisaDetailsPage';
 import PrivateRoute from './PrivateRoute';
+import AboutPage from '../Pages/AboutPage';
+import Contact from '../Pages/Contact';
+import Privacy from '../Pages/Privacy';
+import Terms from '../Pages/Terms';
 
 const router = createBrowserRouter([
     {
@@ -29,6 +33,22 @@ const router = createBrowserRouter([
         {
           path:"/AddVisa",
           element:<PrivateRoute><AddVisa></AddVisa></PrivateRoute>
+        },
+        {
+          path:"/about",
+          element:<AboutPage></AboutPage>
+        },
+        {
+          path:"/contact",
+          element:<Contact></Contact>
+        },
+        {
+          path:"/privacy",
+          element:<Privacy></Privacy>
+        },
+        {
+          path:"/terms",
+          element:<Terms></Terms>
         },
         {
           path:"/myVisa",

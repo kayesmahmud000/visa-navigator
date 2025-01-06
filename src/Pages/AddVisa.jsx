@@ -78,7 +78,7 @@ const AddVisa = () => {
 
                 <form onSubmit={handleAddVisa} className="card-body">
                     <div className="md:flex mb-4">
-                        <div className="form-control md:w-1/2 mr-5">
+                        <div className="form-control w-full md:w-1/2  mr-5">
                             <label className="label">
                                 <span className="label-text"> Country Image</span>
                             </label>
@@ -92,7 +92,7 @@ const AddVisa = () => {
                         </div>
                     </div>
                     <div className="md:flex mb-4">
-                        <div className="form-control md:w-1/2 mr-5">
+                        <div className="form-control md:w-1/2 w-full mr-5">
                             <label className="label">
                                 <span className="label-text"> Visa Type</span>
                             </label>
@@ -111,7 +111,7 @@ const AddVisa = () => {
                         </div>
                     </div>
                     <div className="md:flex mb-4">
-                        <div className="form-control md:w-1/2 mr-5">
+                        <div className="form-control w-full md:w-1/2 mr-5">
                             <label className="label">
                                 <span className="label-text"> Description</span>
                             </label>
@@ -125,7 +125,7 @@ const AddVisa = () => {
                         </div>
                     </div>
                     <div className="md:flex mb-4">
-                        <div className="form-control md:w-1/2 mr-5">
+                        <div className="form-control w-full md:w-1/2 mr-5">
                             <label className="label">
                                 <span className="label-text"> Fee</span>
                             </label>
@@ -139,13 +139,13 @@ const AddVisa = () => {
                         </div>
                     </div>
                     <div className="md:flex mb-4">
-                        <div className="form-control md:w-1/2 mr-5">
+                        <div className="form-control w-full md:w-1/2 mr-5">
                             <label className="label">
                                 <span className="label-text">Application Method</span>
                             </label>
                             <input type="text" name="application_method" placeholder="Application method" className="input input-bordered w-full" required />
                         </div>
-                        <div className="form-control md:w-1/2">
+                        <div className="form-control w-full md:w-1/2">
                             <label className="label">
                                 <span className="label-text">Required_documents</span>
                             </label>

@@ -19,13 +19,18 @@ const Navbar = () => {
    
 
     const link = <>
-        <li><NavLink className={({isActive})=>isActive?"text-[#e63746] mb-3 px-3 py-2  text-sm lg:text-lg" :" mb-4 px-3 text-sm lg:text-lg"} to={"/"}>Home</NavLink></li>
-        <li><NavLink className={({isActive})=>isActive?"text-[#e63746]  mb-3 px-3 py-2  text-sm lg:text-lg " :" mb-4 px-3 text-sm lg:text-lg"} to={"/allVisas"}>All visas</NavLink></li>
+        <li><NavLink className={({isActive})=>isActive?"text-[#e63746] mb-3 px-3 py-2  text-sm lg:text-lg" :" mb-4 px-3  hover:text-[#e63746] text-sm lg:text-lg"} to={"/"}>Home</NavLink></li>
+        <li><NavLink className={({isActive})=>isActive?"text-[#e63746]  mb-3 px-3 py-2  text-sm lg:text-lg " :" mb-4 px-3 hover:text-[#e63746] text-sm lg:text-lg"} to={"/allVisas"}>All visas</NavLink></li>
        
-        {users && <>
-            <li><NavLink className={({isActive})=>isActive?"text-[#e63746]  mb-3 px-3 py-2  text-sm lg:text-lg " :" mb-4 px-3 text-sm lg:text-lg"} to={"/addVisa"}>Add Visa</NavLink></li>
-            <li><NavLink className={({isActive})=>isActive?"text-[#e63746]  mb-3 px-3 py-2  text-sm lg:text-lg " :" mb-4 px-3 text-sm lg:text-lg"} to={"/myVisa"}>My added visas</NavLink></li>
-            <li><NavLink className={({isActive})=>isActive?"text-[#e63746]  mb-3 px-3 py-2  text-sm lg:text-lg " :" mb-4 px-3 text-sm lg:text-lg"} to={"/visaApplication"}>My Visa applications</NavLink></li></> }
+        {users ?<>
+            <li><NavLink className={({isActive})=>isActive?"text-[#e63746]  mb-3 px-3 py-2  text-sm lg:text-lg " :" mb-4 px-3 text-sm hover:text-[#e63746] lg:text-lg"} to={"/addVisa"}>Add Visa</NavLink></li>
+            <li><NavLink className={({isActive})=>isActive?"text-[#e63746]  mb-3 px-3 py-2  text-sm lg:text-lg " :" mb-4 px-3 text-sm hover:text-[#e63746] lg:text-lg"} to={"/myVisa"}>My added visas</NavLink></li>
+            <li><NavLink className={({isActive})=>isActive?"text-[#e63746]  mb-3 px-3 py-2  text-sm lg:text-lg " :" mb-4 px-3 text-sm hover:text-[#e63746] lg:text-lg"} to={"/visaApplication"}>My Visa applications</NavLink></li></> :<>
+           
+            <li><NavLink className={({isActive})=>isActive?"text-[#e63746]  mb-3 px-3 py-2  text-sm lg:text-lg " :" mb-4 px-3 text-sm hover:text-[#e63746] lg:text-lg"} to={"/about"}>About Us</NavLink></li>
+            <li><NavLink className={({isActive})=>isActive?"text-[#e63746]  mb-3 px-3 py-2  text-sm lg:text-lg " :" mb-4 px-3 text-sm hover:text-[#e63746] lg:text-lg"} to={"contact"}>Contact Us</NavLink></li>
+            
+            </>}
 
 
     </>
@@ -55,8 +60,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className='flex items-center justify-center'>
-                    <img src={Logo} alt="" className=' w-6 md:w-12' />
-                    <h1 className='md:text-4xl font-bold ml-3 '>NAVI <br /> VISA.</h1>
+                    <img src={Logo} alt="" className=' w-6  md:w-12' />
+                    <h1 className='md:text-4xl font-bold ml-3 hover:text-[#e63746] '>NAVI <br /> VISA.</h1>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">

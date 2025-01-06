@@ -3,23 +3,31 @@ import Banner from '../Components/Banner';
 import LeatestVisa from '../Components/LeatestVisa';
 import Services from '../Components/Services';
 import FaQs from '../Components/FaQs';
+import Contact from './Contact';
+import About from '../Components/Gateway';
+import Gateway from '../Components/Gateway';
 
 
 const Home = () => {
     return (
-        <div className="container px-4 mx-auto">
+        <div className="container  mx-auto">
             <section>
                 <Banner></Banner>
             </section>
-            <section className='mt-16'>
+            <section className=''>
                 <LeatestVisa></LeatestVisa>
             </section>
-            <section className='my-20'>
+            <section className=''>
                 <Services></Services>
             </section>
-            <section className='my-24'>
+
+            <section className=''>
+                <Gateway></Gateway>
+            </section>
+            <section className=''>
                 <FaQs></FaQs>
             </section>
+            
         </div>
     );
 };
