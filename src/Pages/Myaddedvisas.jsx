@@ -102,8 +102,8 @@ const Myaddedvisas = () => {
     }
     // console.log(myVisa)
     return (
-        <div className='min-h-screen bg-[#f2faef] p-10 container mx-auto'>
-            <div>
+        <div className=' min-h-screen  container mx-auto'>
+            <div className=' mt-28 '>
                 <PageHeading title={" Your Visa Submissions"} subtitle={"Update or delete your added visa information"}></PageHeading>
             </div>
 

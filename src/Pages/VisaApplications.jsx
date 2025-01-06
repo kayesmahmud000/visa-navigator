@@ -13,16 +13,16 @@ const VisaApplications = () => {
     // console.log(search)
 
     useEffect(() => {
-        fetch(`https://visa-nevigator.vercel.app/application/${users.email}`)
+        fetch(`https://visa-nevigator.vercel.app/application?email=${users.email}&name=${search}`)
             .then(res => res.json())
             .then(data => setApplication(data))
-    }, [])
+    }, [users.email, search])
 
-    useEffect(()=>{
-        fetch(`https://visa-nevigator.vercel.app/applications?searchParams=${search}`)
-        .then(res => res.json())
-        .then(data => setApplication(data))
-    },[search])
+    // useEffect(()=>{
+    //     fetch(`https://visa-nevigator.vercel.app/applications?searchParams=${search}`)
+    //     .then(res => res.json())
+    //     .then(data => setApplication(data))
+    // },[search])
 
 
     const handleCancel = id => {
@@ -60,8 +60,8 @@ const VisaApplications = () => {
     }
 
     return (
-        <div className='min-h-screen container mx-auto bg-[#f2faef] p-10' >
-            <section>
+        <div className='container min-h-screen mx-auto  ' >
+            <section className=' mt-28 '>
                 <PageHeading title={"My Visa Applications Overview"} subtitle={"Track Your Visa Application Status and History"}></PageHeading>
             </section>
             <div className="join flex justify-center my-10">
@@ -69,7 +69,7 @@ const VisaApplications = () => {
                     type="text"
                     placeholder="Search"
                     onChange={(e)=>setSearch(e.target.value)}
-                    className="input input-bordered join-item" />
+                    className="input input-bordered text-black join-item" />
                 <button className="btn bg-[#e63746] hover:border-[#e63746]  text-white hover:bg-white hover:text-black join-item">Search</button>
             </div>
             {

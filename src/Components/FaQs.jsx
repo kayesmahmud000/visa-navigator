@@ -4,12 +4,12 @@ import FaqsImg from "../assets/faqs.jpg"
 
 const FaQs = () => {
     return (
-        <div className='bg-[#f2faef] p-10 text-black'>
+        <div className=' py-5 '>
             <div>
                 <PageHeading title={'Visa FAQs & Guides'}
                     subtitle={"Our Go-To Resource for Visa-related Questions"}></PageHeading>
             </div>
-            <section className='lg:flex justify-between  my-10 bg-slate-200 gap-5 p-10'>
+            <section className='lg:flex justify-between  my-10 text-black  gap-5 p-10'>
                 <div className="join join-vertical lg:w-4/6 " data-aos="fade-right" data-aos-delay="50"
     data-aos-duration="1000">
                     <div className="collapse collapse-arrow join-item bg-white mb-4">

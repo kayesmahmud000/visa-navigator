@@ -7,29 +7,32 @@ const Navbar = () => {
     const { users, handleSignout } = useContext(authContext);
     const [isHovered, setIsHovered] = useState(false)
     const [isDarkMode, setIsDarkMode] = useState(() => {
-        return localStorage.getItem('theme') === 'dark';
+        return localStorage.getItem('theme') === 'light';
     });
     useEffect(() => {
-        document.body.className = isDarkMode ? 'dark' : 'light';
-        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+        document.body.className = isDarkMode ? 'light' : 'dark';
+        localStorage.setItem('theme', isDarkMode ? 'light' : 'dark');
     }, [isDarkMode]);
     const toggleTheme = () => {
         setIsDarkMode(!isDarkMode);
     };
-
+   
 
     const link = <>
-        <li><NavLink className={({isActive})=>isActive?"text-[#9538E2] mb-3 px-3 py-2  text-sm lg:text-lg" :" mb-4 px-3 text-sm lg:text-lg"} to={"/"}>Home</NavLink></li>
-        <li><NavLink className={({isActive})=>isActive?"text-[#9538E2]  mb-3 px-3 py-2  text-sm lg:text-lg " :" mb-4 px-3 text-sm lg:text-lg"} to={"/allVisas"}>All visas</NavLink></li>
-        <li><NavLink className={({isActive})=>isActive?"text-[#9538E2]  mb-3 px-3 py-2  text-sm lg:text-lg " :" mb-4 px-3 text-sm lg:text-lg"} to={"/addVisa"}>Add Visa</NavLink></li>
-        <li><NavLink className={({isActive})=>isActive?"text-[#9538E2]  mb-3 px-3 py-2  text-sm lg:text-lg " :" mb-4 px-3 text-sm lg:text-lg"} to={"/myVisa"}>My added visas</NavLink></li>
-        <li><NavLink className={({isActive})=>isActive?"text-[#9538E2]  mb-3 px-3 py-2  text-sm lg:text-lg " :" mb-4 px-3 text-sm lg:text-lg"} to={"/visaApplication"}>My Visa applications</NavLink></li>
+        <li><NavLink className={({isActive})=>isActive?"text-[#e63746] mb-3 px-3 py-2  text-sm lg:text-lg" :" mb-4 px-3 text-sm lg:text-lg"} to={"/"}>Home</NavLink></li>
+        <li><NavLink className={({isActive})=>isActive?"text-[#e63746]  mb-3 px-3 py-2  text-sm lg:text-lg " :" mb-4 px-3 text-sm lg:text-lg"} to={"/allVisas"}>All visas</NavLink></li>
+       
+        {users && <>
+            <li><NavLink className={({isActive})=>isActive?"text-[#e63746]  mb-3 px-3 py-2  text-sm lg:text-lg " :" mb-4 px-3 text-sm lg:text-lg"} to={"/addVisa"}>Add Visa</NavLink></li>
+            <li><NavLink className={({isActive})=>isActive?"text-[#e63746]  mb-3 px-3 py-2  text-sm lg:text-lg " :" mb-4 px-3 text-sm lg:text-lg"} to={"/myVisa"}>My added visas</NavLink></li>
+            <li><NavLink className={({isActive})=>isActive?"text-[#e63746]  mb-3 px-3 py-2  text-sm lg:text-lg " :" mb-4 px-3 text-sm lg:text-lg"} to={"/visaApplication"}>My Visa applications</NavLink></li></> }
 
 
     </>
     return (
-        <div className="navbar ">
-            <div className="navbar-start">
+        <div  >
+          <div className='container navbar mx-auto'>
+          <div className="navbar-start">
                 <div className="dropdown ">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg
@@ -105,6 +108,7 @@ const Navbar = () => {
 
 
             </div>
+          </div>
         </div>
     );
 };

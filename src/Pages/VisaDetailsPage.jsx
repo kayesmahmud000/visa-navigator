@@ -72,18 +72,18 @@ const VisaDetailsPage = () => {
     }
     return (
         <div>
-            <section className='w-11/12 mb-10 mx-auto'>
+            {/* <section className='w-11/12 mb-10 mx-auto'>
                 <Navbar></Navbar>
-            </section>
-            <section className='bg-[#f2faef]  p-10 container mx-auto'>
-                <div className='my-5'>
+            </section> */}
+            <section className=' min-h-screen p-10 container mx-auto'>
+                <div className='my-24 mt-28'>
                     <PageHeading title={"Visa Insights"} subtitle={"Everything You Need to Know About Your Visa"}></PageHeading>
                 </div>
-                <div className="hero my-5 px-3 bg-[#d0bfff] max-w-3xl mx-auto">
-                    <div className="hero-content flex-col  justify-between text-black lg:flex-row  ">
+                <div className="hero my-5 px-3  max-w-3xl mx-auto">
+                    <div className="hero-content flex-col  justify-between  lg:flex-row  ">
                         <img
                             src={photo}
-                            className="   rounded-lg h-[200px] w-[400px] object-cover  lg:h-[380px] " />
+                            className="   rounded-lg h-[200px] w-[400px] object-cover  lg:h-[500px] " />
                         <div>
                             <div className="card-body">
                                 <h2 className="card-title text-4xl">
@@ -113,13 +113,13 @@ const VisaDetailsPage = () => {
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
                     <div className="bg-white text-center justify-center items-start p-6 rounded-md shadow-md">
                        
-                    <form  onSubmit={handleApplyFrom} className="card-body">
+                    <form  onSubmit={handleApplyFrom} className="card-body ">
                     <div className="mb-4">
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input type="email" placeholder="email" className="input input-bordered" defaultValue={users.email} required />
+                        <input type="email" placeholder="email" className="input text-black input-bordered" defaultValue={users.email} required />
                     </div>
                        
                     </div>
@@ -128,13 +128,13 @@ const VisaDetailsPage = () => {
                             <label className="label">
                                 <span className="label-text">First Name</span>
                             </label>
-                            <input type="text" name="firstName" placeholder="Enter First Name" className="input input-bordered w-full" required />
+                            <input type="text" name="firstName" placeholder="Enter First Name" className="input input-bordered text-black w-full" required />
                         </div>
                         <div className="form-control md:w-1/2">
                             <label className="label">
                                 <span className="label-text">Last Name</span>
                             </label>
-                            <input type="text" name="lastName" placeholder="Enter Last Name" className="input input-bordered w-full" required />
+                            <input type="text" name="lastName" placeholder="Enter Last Name" className="input input-bordered text-black w-full" required />
                         </div>
                     </div>
                     <div className="md:flex mb-4">
@@ -142,14 +142,14 @@ const VisaDetailsPage = () => {
                             <label className="label">
                                 <span className="label-text"> Applied date</span>
                             </label>
-                            <DatePicker className='input input-bordered w-full' selected={startDate} onChange={(date) => setStartDate(date)} />
-                            {/* <input type="text" name="description" placeholder="description" className="input input-bordered w-full" required /> */}
+                            <DatePicker className='input input-bordered text-black w-full' selected={startDate} onChange={(date) => setStartDate(date)} />
+                            
                         </div>
                         <div className="form-control md:w-1/2">
                             <label className="label">
                                 <span className="label-text">Fee</span>
                             </label>
-                            <input type="text" name="fee" defaultValue={fee} className="input input-bordered w-full" required />
+                            <input type="text" name="fee" defaultValue={fee} className="input input-bordered text-black w-full" required />
                         </div>
                     </div>
                    
@@ -162,9 +162,9 @@ const VisaDetailsPage = () => {
                     </div>
                 </div>
             )}
-            <section className='w-11/12 mt-10 mx-auto'>
+            {/* <section className=' mt-10 '>
                 <Footer></Footer>
-            </section>
+            </section> */}
         </div>
     );
 };

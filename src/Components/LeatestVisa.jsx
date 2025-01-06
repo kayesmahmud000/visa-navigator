@@ -14,12 +14,12 @@ const LeatestVisa = () => {
         .then(data=>setLatestVisa(data))
     },[])
     return (
-        <div className="bg-[#f2faef] py-10">
+        <div className=" py-5">
             <section>
                 <PageHeading title={"Discover New Visas"} subtitle={"Find the Latest Visas Tailored to Your Needs, Including Tourist, Student, and Official Visas"}></PageHeading>
             </section>
             <section className="my-10">
-               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-5"  >
+               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-5"  >
                {
                     latestVisa.map(visa=><VisaCard key={visa._id} visa={visa}></VisaCard>)
                 }

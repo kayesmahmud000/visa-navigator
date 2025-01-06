@@ -40,13 +40,14 @@ const router = createBrowserRouter([
           
           
         },
+        {
+          path:"/detailsPage/:id",
+          element:<PrivateRoute><VisaDetailsPage></VisaDetailsPage></PrivateRoute>,
+          loader:({params})=>fetch(`https://visa-nevigator.vercel.app/visa/${params.id}`)
+        },
       ]
     },
-    {
-      path:"/detailsPage/:id",
-      element:<PrivateRoute><VisaDetailsPage></VisaDetailsPage></PrivateRoute>,
-      loader:({params})=>fetch(`https://visa-nevigator.vercel.app/visa/${params.id}`)
-    },
+    
     {
       path:"/login",
       element:<LoginPage></LoginPage>

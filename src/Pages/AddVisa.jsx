@@ -70,9 +70,11 @@ const AddVisa = () => {
     };
 
     return (
-        <div>
-            <div className="card rounded-none bg-[#f2faef] w-full max-w-7xl px-4 mx-auto ">
-                <PageHeading title={"Add a New Visa"} subtitle={"Complete the Form to Add Visa Details"}></PageHeading>
+        <div className=''>
+            <div className="card rounded-none   w-full max-w-7xl px-4 mx-auto ">
+               <div className=' mt-24 '>
+               <PageHeading title={"Add a New Visa"} subtitle={"Complete the Form to Add Visa Details"}></PageHeading>
+               </div>
 
                 <form onSubmit={handleAddVisa} className="card-body">
                     <div className="md:flex mb-4">
@@ -94,11 +96,11 @@ const AddVisa = () => {
                             <label className="label">
                                 <span className="label-text"> Visa Type</span>
                             </label>
-                            <select name="visType" id=" visa" className="input input-bordered w-full">
-                                <option value="Student" className='text-gray-400'>Select visa type</option>
-                                <option value="Student">Student Visa</option>
-                                <option value="Tourist">Tourist visa</option>
-                                <option value="Official">Official visa</option>
+                            <select name="visType" id=" visa" className="input text-black input-bordered w-full">
+                                <option  value="Student" className=''>Select visa type</option>
+                                <option className='text-black' value="Student">Student Visa</option>
+                                <option className='text-black' value="Tourist">Tourist visa</option>
+                                <option className='text-black' value="Official">Official visa</option>
                             </select>
                         </div>
                         <div className="form-control md:w-1/2">
