@@ -84,16 +84,16 @@ You can access the live application at: [Visa Navigator](https://navi-visa.web.a
 
 
 # Clone the repository
-git clone https://github.com/username/navi-visa.git
+git clone https://github.com/kayesmahmud000/visa-navigator
 
 # Navigate into the project directory
 cd navi-visa
 
 # Install the dependencies
-npm install
+`npm install`
 
 # Run the development server
-npm run dev
----
+`npm run dev`
+
 
 We hope you find Visa Navigator useful and easy to use. If you have any questions or feedback, feel free to reach out!
