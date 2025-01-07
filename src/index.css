@@ -11,13 +11,14 @@ body{
     padding: 0;
 }
 body.light {
-    --background-color: white;
-    --text-color: black;
+   
+    --background-color: black;
+    --text-color: white;
 }
 
 body.dark {
-    --background-color: black;
-    --text-color: white;
+    --background-color: white;
+    --text-color: black;
 }
 
 body {
