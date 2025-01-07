@@ -72,7 +72,7 @@ const AddVisa = () => {
     return (
         <div className=''>
             <div className="card rounded-none   w-full max-w-7xl px-4 mx-auto ">
-               <div className=' mt-24 '>
+               <div className=' '>
                <PageHeading title={"Add a New Visa"} subtitle={"Complete the Form to Add Visa Details"}></PageHeading>
                </div>
 

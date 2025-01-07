@@ -63,7 +63,7 @@ const VisaApplications = () => {
 
     return (
         <div className='container min-h-screen mx-auto  ' >
-            <section className=' mt-28 '>
+            <section className='  '>
                 <PageHeading title={"My Visa Applications Overview"} subtitle={"Track Your Visa Application Status and History"}></PageHeading>
             </section>
             <div className="join flex justify-center my-10">

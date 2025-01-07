@@ -12,11 +12,10 @@ const MainLayout = () => {
    
     return (
         <div>
-            <header className={` fixed z-50 w-full bg-gray-800 bg-opacity-40  transition-all duration-300  mb-28 ease-in-out
-          }`}>
+            <header className=" sticky top-0 z-50" >
                 <Navbar></Navbar>
             </header>
-            <main  > 
+            <main className="container mx-auto" > 
                 <Outlet></Outlet>
             </main>
             <footer className=""> 

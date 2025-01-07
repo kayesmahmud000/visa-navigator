@@ -28,7 +28,7 @@ const AllVisas = () => {
 
     return (
         <div className='  p-4 container mx-auto'>
-            <div className='py-5  mt-24'>
+            <div className='py-5  '>
                 <PageHeading title={"Visa Central"} subtitle={"Find the Perfect Visa for Your Journey with Complete Application Details"}></PageHeading>
             </div>
             <div className='mb-24'>

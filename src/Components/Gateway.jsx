@@ -3,7 +3,7 @@ import PageHeading from "./PageHeading";
 
 const Gateway = () => {
     return (
-        <div id="about" className="my-5">
+        <div id="" className="my-16">
             
             <div>
             {/* Title and Subtitle */}

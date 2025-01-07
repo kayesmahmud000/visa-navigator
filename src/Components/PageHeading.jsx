@@ -3,7 +3,7 @@ import { Fade } from 'react-awesome-reveal';
 
 const PageHeading = ({title, subtitle}) => {
     return (
-        <div className='mt-24'>
+        <div className='my-5'>
            <Fade direction='down'>
            <h1 className='text-4xl font-bold  text-center mt-6'>{title}</h1>
            </Fade>

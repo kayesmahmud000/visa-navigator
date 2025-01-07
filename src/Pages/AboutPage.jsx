@@ -4,7 +4,7 @@ import AboutImg from '../assets/about-banner.jpeg'
 const AboutPage = () => {
     return (
         <div className='container  mx-auto ' >
-             <div className="py-5  mt-24">
+             <div className="py-5 ">
               <PageHeading title={"About Us"} subtitle={""}></PageHeading>
               </div>
             <div className="hero ">

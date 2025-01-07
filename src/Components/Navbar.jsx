@@ -35,8 +35,8 @@ const Navbar = () => {
 
     </>
     return (
-        <div  >
-          <div className='container navbar mx-auto'>
+        <div className="w-full bg-gray-800  py-4 bg-opacity-40" >
+          <div className='  navbar container mx-auto flex justify-between items-center '>
           <div className="navbar-start">
                 <div className="dropdown ">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -61,7 +61,7 @@ const Navbar = () => {
                 </div>
                 <div className='flex items-center justify-center'>
                     <img src={Logo} alt="" className=' w-6  md:w-12' />
-                    <h1 className='md:text-4xl font-bold ml-3 hover:text-[#e63746] '>NAVI <br /> VISA.</h1>
+                    <h1 className='md:text-4xl font-bold ml-3 hover:text-[#e63746] '>NAVI  VISA.</h1>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -119,3 +119,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

@@ -18,7 +18,7 @@ const Banner = () => {
       autoplay
       navigation
       pagination={{ clickable: true }}
-      className='mt-28'
+      className='my-5'
       
       
     >

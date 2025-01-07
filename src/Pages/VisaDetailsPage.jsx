@@ -76,7 +76,7 @@ const VisaDetailsPage = () => {
                 <Navbar></Navbar>
             </section> */}
             <section className=' min-h-screen p-10 container mx-auto'>
-                <div className='my-24 mt-28'>
+                <div className=''>
                     <PageHeading title={"Visa Insights"} subtitle={"Everything You Need to Know About Your Visa"}></PageHeading>
                 </div>
                 <div className="hero my-5 px-3  max-w-3xl mx-auto">

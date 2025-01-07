@@ -10,7 +10,7 @@ const VisaCard = ({ visa }) => {
         name,
         visType,
         processing,
-        description,
+       
         validity,
         age,
         fee,                

@@ -9,7 +9,7 @@ import { BiWorld } from "react-icons/bi";
 const Contact = () => {
     return (
         <div >   <div className="container  mx-auto ">
-              <div className="py-5  mt-24">
+              <div className="py-5  ">
               <PageHeading title={"Contact Us"} subtitle={""}></PageHeading>
               </div>
             

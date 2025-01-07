@@ -3,14 +3,13 @@ import Banner from '../Components/Banner';
 import LeatestVisa from '../Components/LeatestVisa';
 import Services from '../Components/Services';
 import FaQs from '../Components/FaQs';
-import Contact from './Contact';
-import About from '../Components/Gateway';
+
 import Gateway from '../Components/Gateway';
 
 
 const Home = () => {
     return (
-        <div className="container  mx-auto">
+        <div className="">
             <section>
                 <Banner></Banner>
             </section>
