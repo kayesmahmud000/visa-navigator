@@ -87,7 +87,7 @@ You can access the live application at: [Visa Navigator](https://navi-visa.web.a
 git clone https://github.com/kayesmahmud000/visa-navigator
 
 # Navigate into the project directory
-cd navi-visa
+cd visa-navigator
 
 # Install the dependencies
 `npm install`
