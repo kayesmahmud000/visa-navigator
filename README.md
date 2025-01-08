@@ -20,7 +20,7 @@ You can access the live application at: [Visa Navigator](https://navi-visa.web.a
 - **Dark/Light Theme Toggle**: Switch between dark and light themes for a personalized user experience.
 
 ## Main Tecnology
-- **Frontend**: Next.js, React.js, Tailwind CSS
+- **Frontend**: React.js, Tailwind CSS
 
 - **Backend**: Node.js, Express.js
 
